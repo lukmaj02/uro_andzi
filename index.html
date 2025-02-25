@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URODZINY ANDZI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            background: url('pitbull.gif') repeat;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Add animation to the heading */
+        h1 {
+            animation: textAnimation 2s ease-in-out infinite;
+            font-size: 4rem; /* Increased font size */
+            color: rgb(220, 43, 43); /* Changed color to red */
+        }
+
+        /* Add animation to the button */
+        button {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            background-color: #ff7f50;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            animation: buttonAnimation 1.5s ease-in-out infinite;
+        }
+
+        button:hover {
+            background-color: #ff6347;
+        }
+
+        /* Keyframes for title animation */
+        @keyframes textAnimation {
+            0% {
+                color: #ff0000; /* Red color */
+                transform: scale(1);
+            }
+            50% {
+                color: #ff4500; /* Lighter red */
+                transform: scale(1.2);
+            }
+            100% {
+                color: #ff0000; /* Red color */
+                transform: scale(1);
+            }
+        }
+
+        /* Keyframes for button animation */
+        @keyframes buttonAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>HAPPY BIRTHDAY LITTLE GIRL</h1>
+    <button id="playButton" onclick="playAudio()">LET ME TELL YOU A BIRTHDAY WISHES!</button>
+    <audio id="audio">
+        <source src="pitbull-birthdat.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script>
+        function playAudio() {
+            var audio = document.getElementById('audio');
+            var button = document.getElementById('playButton');
+            audio.play();
+            button.disabled = true;
+            
+            audio.onended = function() {
+                button.disabled = false;
+            };
+        }
+    </script>
+</body>
+</html>
